@@ -1,10 +1,10 @@
 # Summary
 
-* [开始点火]
+* [开始点火](start/README.md)
     * [安装](start/install.md)
     * [核心概念](start/core_concepts.md)
 	* [约定](start/naming.md)
-* [对象]
+* [对象](object/README.md)
     * [类&实例](object/class_instance.md)
     * [打破类&实例](obje/reopen.md)
     * [算计的属性](obje/computed.md)
