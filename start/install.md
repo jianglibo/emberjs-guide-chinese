@@ -39,4 +39,6 @@ ember -v
 
 ![ember -v result][ember-v]
 
+{{book.imgbase}}
+
 [ember-v]:{{book.imgbase}}/ember-v-result.png "执行ember -v的输出结果"
