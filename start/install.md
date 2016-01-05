@@ -2,7 +2,7 @@
 
 ~~用编辑器打开html文件，然后引入```<script type="text/javascript" src="./js/xx-framwork.js"></script>```，开始编写js代码。时不时地在浏览器和编辑器之间切换，时不时的按一下F5，看看有没有出错。~~
 
-__Emberjs不是这样的写法__
+__Emberjs不是这样的写法!__
 
 Emberjs提供了一个配套的工具[ember-cli](http://www.ember-cli.com/)来帮你建立、组织、编写一个Emberjs项目。ember-cli带给你：
 
