@@ -3,7 +3,7 @@
 * [出发](start/README.md)
     * [安装](start/install.md)
     * [核心概念](start/core_concepts.md)
-	  * [潜规则](start/naming.md)
+    * [潜规则](start/naming.md)
 * [对象](object/README.md)
     * [类&实例](object/class_instance.md)
     * [打破类&实例](obje/reopen.md)
