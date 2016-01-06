@@ -9,10 +9,11 @@ url所包含的信息远远不止于一个路径，我们甚至认为web程序�
 ## 模板
 
 Emberjs使用[Handlebar](http://handlebarsjs.com/)模板语言。较之HTML，模板可以包含：
-
+{% raw %}
 * 表达式 ```{{firstName}}```
 * 槽，放在模板的某个部位，可以嵌入不同的套娃模板
 * 组件，既然可以有```<div></div>```，为什么不能有```<your-div></your-div>```呢
+{% endraw %}
 
 ## 分发者（ROUTER)
 
