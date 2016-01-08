@@ -9,7 +9,7 @@
     * [重塑类&实例](object/reopen.md)
     * [算计的属性](object/computed.md)
     * [算计于集合的属性](object/computed_aggregate.md)
-    * [观察](object/obersers.md)
+    * [观察](object/observers.md)
     * [绑定](object/binding.md)
     * [算计、观察、绑定的异同](object/cob.md)
     * [可遍历对象](object/enumerables.md)
