@@ -81,7 +81,7 @@ and a link in {{link-to 'Inline Form' 'index'}}.
 </p>
 ```
 
-加上link-to生产的属性之外，html<a>元素可以使用的属性。
+加上link-to生产的属性之外，html```<a>```元素可以使用的属性。
 
 ## 覆盖浏览器的历史纪录
 
