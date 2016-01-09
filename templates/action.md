@@ -44,7 +44,7 @@ export default Ember.Controller.extend({
 
 当点击“收起”按钮的时候，posts.js里面的actions.contract方法得到执行，isExpanded成false，UI自动同步。
 
-action可放入到任何html节点，有些浏览器对```<div>```，没有href属性的```<a>```等节点发出click事件，对于这种情况可以给节点加一个data-ember-action属性：
+action可放入到任何html节点，有些浏览器对```<div>```，没有href属性的```<a>```等节点__不会__发出click事件，对于这种情况可以给节点加一个data-ember-action属性：
 ```css
 [data-ember-action] {
   cursor: pointer;
