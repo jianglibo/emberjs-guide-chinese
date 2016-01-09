@@ -47,7 +47,7 @@ Router.map(function() {
   });
 });
 ```
-app/templates/photo/index.hbs：（原文这里是否该改成app/templates/photos/photo/index.hbs???）
+app/templates/photo/index.hbs：
 ```html
 <div class="photo">
   {{body}}
@@ -55,8 +55,7 @@ app/templates/photo/index.hbs：（原文这里是否该改成app/templates/phot
 
 <p>{{#link-to 'photos.photo.comment' primaryComment}}Main Comment{{/link-to}}</p>
 ```
-这里的link-to只给了一个占位符的值，该值赋给最末端的占位符，那么:photo_id的值从哪里来呢？
-从当前的model而来。
+这里的link-to只给了一个占位符的值，该值赋给最末端的占位符，那么```:photo_id```的值从哪里来呢？首先根据route定义，推算出显示上面模板的路径应该是/photos/1，是的从这里来。
 
 也可以直接将占位符参数给齐了。
 ```html
