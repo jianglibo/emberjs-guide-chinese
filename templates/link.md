@@ -2,7 +2,7 @@
 
 {% raw %}
 
-Ember的链接输出类似html的<a>元素，a元素和url相关，就像在前面的章节中提到的，Ember将url看作一等公民，非常重要的角色。它实际达成的功能和controller的transitonToRoute以及route的transitionTo是一样的，它是在模板中呈现，而且从名称到语法都符合大多数人的习惯。
+Ember的链接输出类似html的```<a>```元素，a元素和url相关，就像在前面的章节中提到的，Ember将url看作一等公民，非常重要的角色。它实际达成的功能和controller的transitonToRoute以及route的transitionTo是一样的，它是在模板中呈现，而且从名称到语法都符合大多数人的习惯。
 
 ```javascript
 Router.map(function() {

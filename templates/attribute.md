@@ -45,7 +45,7 @@ isAdministrator为假：
 
 有2中方法可以帮助添加data属性。
 
-[重塑](object/reopen.md)Ember.LinkComponent和Ember.TextField。
+[重塑](object/reopen.html)Ember.LinkComponent和Ember.TextField。
 ```html
 export default Ember.LinkComponent.reopen({
   attributeBindings: ['data-toggle']
