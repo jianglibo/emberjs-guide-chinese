@@ -20,15 +20,15 @@
 可以传入下表列出的标准的属性：
 --- | --- | ---
 `readonly`	| `required` |	`autofocus`
-`value`	|`placeholder`	|`disabled`
-`size`	|`tabindex`	|`maxlength`
+`value`	| `placeholder`	| `disabled`
+`size`	| `tabindex`	| `maxlength`
 `name`|	`min`|	`max`
-`pattern`|	`accept`	|`autocomplete`
-`autosave`|	`formaction`	|`formenctype`
-`formmethod`|	`formnovalidate`	|`formtarget`
-`height`	|`inputmode`|	`multiple`|
-`step`|	`width`|	`form`|
-`selectionDirection`|	`spellcheck`|
+`pattern` |	`accept`	| `autocomplete`
+`autosave` |	`formaction`	| `formenctype`
+`formmethod` |	`formnovalidate`	| `formtarget`
+`height`	| `inputmode` |	`multiple`
+`step` |	`width` |	`form`|
+`selectionDirection` |	`spellcheck`
 
 
 属性的值用引号括起来的就是常量值，没有引号的就是上下文环境的属性，通常是controller里面的属性。
