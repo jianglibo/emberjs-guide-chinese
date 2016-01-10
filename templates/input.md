@@ -18,6 +18,7 @@
 
 ```
 可以传入下表列出的标准的属性：
+    |     |
 --- | --- | ---
 |`readonly`	| `required` |	`autofocus`
 |`value`	|`placeholder`	|`disabled`
