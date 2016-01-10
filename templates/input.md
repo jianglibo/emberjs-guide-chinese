@@ -28,7 +28,7 @@
 `formmethod` |	`formnovalidate`	| `formtarget`
 `height`	| `inputmode` |	`multiple`
 `step` |	`width` |	`form`|
-`selectionDirection` |	`spellcheck`
+`selectionDirection` |	`spellcheck` | ''
 
 
 属性的值用引号括起来的就是常量值，没有引号的就是上下文环境的属性，通常是controller里面的属性。
