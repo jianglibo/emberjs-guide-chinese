@@ -34,6 +34,11 @@ Router.map(function() {
 
 这里就讲一个差异，如果传入photo，那么对应route的model()钩子就不再执行，model()一般是从服务器获取photo对象。
 
+## 占位符的本质
+占位符的本质是将model编码到URL中去，在嵌套的情况下（比如下一段代码），一个占位符对应一个route，对应一个model。注意这个和url参数的区别，url参数是可以任意指定的，但是占位符不可以，必须有对应的route。
+
+对于node的express，或者java那边的spring mvc比较熟悉的情况下，特别需要注意。它的占位符是有讲究的。
+
 
 ## route里面有更多的占位符呢？
 app/router.js：
