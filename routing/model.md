@@ -1,7 +1,7 @@
 # 指定路由的模型
 
 模板需要消费模型，模型由路由提供。Ember通过钩子的方式获取指定的模型。
-
+{% raw %}
 
 这是一个路由的定义：
 app/routes/photos.js
@@ -93,4 +93,64 @@ Router.map(function() {
 
 如果你没有开始用Ember真正写程序，请略过。
 
+这是一个示例route的设置：
+app/routes.js
+```javascript
+  this.route('learning', function(){
+    this.route('index', {path: '/:id1/:id2'}, function() { //index route got params: id1,id2,not id3
+      this.route('another', {path: '/:id3'}); //another route got id3,not id1 and id2.
+    });
+  });
+```
+导航到```/learning/65/45/3```时，就像之前一再提到的，Ember会将此URL“解码”成route。
 
+app/routes/learning/index.js
+```javascript
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model(params) {
+    console.log("from learning.index route.");
+    console.log(params);
+    return {id: 55};
+  },
+  serialize(model, placeholderNames) {
+    console.log('from learning.index serialize.');
+    console.log(arguments.length);
+    console.log(model);
+    console.log(placeholderNames);
+    return {id1: model.id1.id, id2: model.id2.id};
+  }
+});
+```
+此route的model(params)的params包含id1和id2，但没有id3。
+
+
+app/routes/learning/index/another.js
+```javascript
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  setupController(controller, model) {
+    controller.set("id1", {id1: 65});
+    controller.set("id2", {id2: 45});
+    controller.set("ids", {id1: {id: 65}, id2: {id: 45}});
+    controller.set('model', model);
+  },
+  model(params) {
+    console.log("from learning.another route.");
+    console.log(params);
+    return {id3: 55};
+  }
+});
+```
+此route收到的是id3，但没有id1和id2。
+
+现在在another.hbs里面增加一行内容：
+```hbs
+{{#link-to "learning.index.another" ids model}}hello{{/link-to}}
+```
+
+再次提到，link-to相当于将路由“编码”成URL。但是参数的数目****不是和占位符一致，而是和路由的层级数一致****，Ember将URL“解码”成路由，每个路由处理自己的占位符。对Ember来说，这种处理规则是非常清晰的。
+
+{% endraw %}
