@@ -37,7 +37,7 @@ Router.map(function() {
 ## 占位符的本质
 占位符的本质是将model编码到URL中去，在嵌套的情况下（比如下一段代码），一个占位符对应一个route，对应一个model。注意这个和url参数的区别，url参数是可以任意指定的，但是占位符不可以，必须有对应的route。
 
-对于node的express，或者java那边的spring mvc比较熟悉的情况下，特别需要注意。它的占位符是有讲究的。
+对于node的express，或者java那边的spring mvc比较熟悉的情况下，特别需要注意，占位符不是一个随便的女人，想怎样就怎样。
 
 
 ## route里面有更多的占位符呢？
