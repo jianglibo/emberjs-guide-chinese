@@ -32,7 +32,7 @@
     * [指定模型](routing/model.md)
     * [调教控制器](routing/controller.md)
     * [绘制模板](routing/render.md)
-    * [重定向](routing/redirect.md)
+    * [转向](routing/redirect.md)
     * [设定URL类型](routing/url_type.md)
     * [URL参数](routing/url_query.md)
     * [异步的路由](routing/asynchronous_routing.md)
