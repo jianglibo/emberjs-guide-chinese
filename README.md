@@ -8,4 +8,6 @@ Emberjs工具链完备，生产效率高，可能值得您关注一下。我把e
 
 和指南配套，开源了一个Ember程序，欢迎参与开发。
 
+此文档不能算是Ember中文入门指南，作为Ember的开发者，在进入Ember之前，已经对nodejs的生态圈有所了解，知道npm,bower，webpack等一些工具。如果具被后端知识，比如rubyonrails，spring等，则效果更佳。
+
 [Ember示例程序](http://git.oschina.net/jianglibo/m3958-ember)
