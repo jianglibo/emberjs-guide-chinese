@@ -4,7 +4,7 @@
 
 ## Promise（承诺）简述
 
-Promise听起来很高大上，其实概念很简单。它是一个最终会有结论的回答，可能马上给你，可能等会儿给你，也可能告诉你因为什么原因给不了。就像=符号用于赋值，Promise也有一个类似的符号（或者模式）。
+Promise听起来很高大上，其实概念很简单。它是一个最终会有结论的回答，可能马上给你，可能等会儿给你，也可能告诉你因为什么原因给不了。就像=符号用于赋值，Promise也有一个类似的符号（模式，套路，伎俩）。
 
 ```js
 var promise = fetchTheAnswer(); //我会回答你的一个承诺
@@ -64,4 +64,59 @@ export default Ember.Route.extend({
 ```
 ## 当Promise失败时，自己解决问题。
 
-Promise的串联特性，使得自己处理问题也不会引起语法的太大变化。
+Promise串联的特性，使得自己处理失败也不会引起语法的太大变化。
+```js
+export default Ember.Route.extend({
+  model() {
+    return iHopeThisWorks().then(null, function() {
+      // Promise失败了，但还是继续。
+      // use as the route's model and continue on with the transition
+      return { msg: "Recovered from rejected promise" };
+    });
+  }
+});
+```
+## beforeModel 和 afterModel
+{% raw %}
+route的model()钩子在某些条件下不会执行，在这种情况之下，如果还是希望介入路由的某个环节，beforeModel是一个合适的地方。比如，```{{#link-to 'article' article}}， this.transitionTo('article', article)```。因为已经准备好了model的缘故。
+
+### beforeModel
+
+beforeModel和model一样可以返回Promise。
+
+以下是beforeModel常见的使用场景：
+* 决定是否在解析模型之前转向。比如，知道没有登陆，就没有必要费心费力取服务器取数据了。
+* 判断用户是否登陆。这个可以通过reopen route加入，先让所有的route必须先登陆才允许，然后逐个放开。
+* 加载其它代码。
+```js
+export default Ember.Route.extend({
+  beforeModel() {
+    if (!this.controllerFor('auth').get('isLoggedIn')) {
+      this.transitionTo('login');
+    }
+  }
+});
+```
+
+### afterModel
+
+如果逻辑依赖于model的话，必须在afterModel里面书写。
+```js
+export default Ember.Route.extend({
+  model() {
+    // `this.store.findAll('article')` returns a promise-like object
+    // (it has a `then` method that can be used like a promise)
+    return this.store.findAll('article');
+  },
+  afterModel(articles) {
+    //只有articles解析之后，我才能知道是不是只有一条记录。
+    if (articles.get('length') === 1) {
+      this.transitionTo('article.show', articles.get('firstObject'));
+    }
+  }
+});
+```
+
+既然Promise可以链条化，为何不在model()钩子里面添加一个then，而是要新加一个afterModel钩子呢？前面已经提到，___model()钩子有可能不会被执行。___
+
+{% endraw %}
